@@ -102,7 +102,7 @@
             this.Controls.Add(this.germanPictureBox);
             this.Controls.Add(this.finlandPictureBox);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.finlandPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.germanPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.francePictureBox)).EndInit();
