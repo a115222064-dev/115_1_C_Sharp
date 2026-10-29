@@ -19,7 +19,34 @@ namespace Payroll_with_Overtime
 
         private void calculateButton_Click(object sender, EventArgs e)
         {
-           
+            const int BASE_HOURS = 40;
+            const decimal OVERTIME_RATE = 1.5m;
+            decimal hoursWorked, hourlyPayRate, grossPay;
+
+            try
+            {
+
+                hoursWorked = decimal.Parse(hoursWorkedTextBox.Text);
+                hourlyPayRate = decimal.Parse(hourlyPayRateTextBox.Text);
+
+                if (hoursWorked <= BASE_HOURS)
+                {
+                    grossPay = hoursWorked * hourlyPayRate;
+                }
+                else
+                {
+                    decimal overtimeHours = hoursWorked - BASE_HOURS;
+                    grossPay = (BASE_HOURS * hourlyPayRate) + (overtimeHours * hourlyPayRate * OVERTIME_RATE);
+                }
+
+                grossPayLabel.Text = grossPay.ToString("C");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("請輸入有效的工時數字。", "輸入錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                hoursWorkedTextBox.Focus();
+                return;
+            }
         }
 
         private void clearButton_Click(object sender, EventArgs e)
