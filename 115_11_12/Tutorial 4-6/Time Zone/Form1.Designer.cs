@@ -61,6 +61,7 @@
             this.cityListBox.Name = "cityListBox";
             this.cityListBox.Size = new System.Drawing.Size(479, 229);
             this.cityListBox.TabIndex = 1;
+            this.cityListBox.SelectedIndexChanged += new System.EventHandler(this.cityListBox_SelectedIndexChanged);
             // 
             // outputDescriptionLabel
             // 
